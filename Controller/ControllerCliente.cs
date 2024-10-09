@@ -7,7 +7,7 @@ namespace CRUD.Controller
 {
     internal class ControllerCliente
     {
-        public void Add(string nome, string email, DateTime dataNascimento)
+        public bool CheckAdd(string nome, string email, DateTime dataNascimento)
         {
             if (!String.IsNullOrWhiteSpace(nome) && !String.IsNullOrWhiteSpace(email) && dataNascimento != null)
             {
@@ -17,6 +17,11 @@ namespace CRUD.Controller
                     Email = email,
                     DataNascimento = dataNascimento
                 };
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }
